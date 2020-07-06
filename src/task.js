@@ -1,4 +1,3 @@
-'use strict';
 import galleryItems from './gallery-items.js';
 
 const refs = {
@@ -14,9 +13,6 @@ const refs = {
 refs.gallery.addEventListener('click', handleImgClick);
 refs.closeModalBtn.addEventListener('click', closeModal);
 refs.overlay.addEventListener('click', handleOverlayClick);
-// window.addEventListener('keydown', keyPress);
-
-// Creating marcup
 
 const galleryMarkup = galleryItems.reduce((acc, item) => {
     const itemMarkup = `<li class="gallery__item">
@@ -40,8 +36,6 @@ const galleryMarkup = galleryItems.reduce((acc, item) => {
 
 refs.gallery.insertAdjacentHTML('beforeend', galleryMarkup);
 
-// Display image in original size
-
 function handleImgClick(event) {
     event.preventDefault();
     if (event.target === event.currentTarget) {
@@ -54,8 +48,6 @@ function handleImgClick(event) {
     refs.modal.classList.add('is-open');
     window.addEventListener('keydown', handleKeyPress);
 }
-
-// Closing modal window
 
 function closeModal() {
     refs.modal.classList.remove('is-open');
